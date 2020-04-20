@@ -1,4 +1,4 @@
 FROM jenkins/jenkins:lts
 
-ENV JENKINS_OPTS --httpPort=8484 --httpsPort=8083
+ENV JENKINS_OPTS --httpPort=8080 
 EXPOSE 8083

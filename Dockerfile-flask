@@ -1,9 +1,5 @@
 FROM python:3
-ENV APP /app
-RUN mkdir $APP
-WORKDIR $APP
-COPY requirements.txt .
+ADD . /code
+WORKDIR /code
 RUN pip install -r requirements.txt
-COPY . .
-EXPOSE 80
-CMD [ "uwsgi", "--ini", "app.ini" ]
+CMD python app.py
