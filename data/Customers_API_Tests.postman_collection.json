@@ -1,0 +1,33 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Customers_API_Tests",
+		"_postman_id": "0c2d87c4-cb55-0ea0-7ff2-21ac07a46d75",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:5000/customers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 100 ms\"] = responseTime < 100"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://127.0.0.1:5000/customers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
