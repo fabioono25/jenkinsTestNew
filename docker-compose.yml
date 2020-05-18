@@ -1,5 +1,10 @@
 version: '3'
 services:
+    dns-server:
+      image: dvdarias/docker-hoster
+      volumes: 
+        - /var/run/docker.sock:/tmp/docker.sock
+        - /etc/hosts:/tmp/hosts
     api:
       build:
         context: .
@@ -9,7 +14,9 @@ services:
       volumes:
           - .:/code
     jenkins:
-      build:
-        context: .
-        dockerfile: Dockerfile-jenkins
-        
+      image: jenkins/jenkins:lts
+      ports:
+        - "8080:8080"        
+      volumes: 
+        - ./jenkins_home:/var/jenkins_home
+      
