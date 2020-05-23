@@ -1,0 +1,43 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Customers_API_Tests",
+		"_postman_id": "0c2d87c4-cb55-0ea0-7ff2-21ac07a46d75",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET-Customers",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"tests[\"Response time is less than 1000 ms\"] = responseTime < 1000",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"",
+							"tests[\"Qtde of registers must be more than 0\"] = jsonData.length > 0;",
+							"",
+							"tests[\"First name is John\"] = jsonData[0].name === \"John\";",
+							"",
+							"tests[\"Second name is Steve\"] = jsonData[1].name === \"Steve\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "http://api:5000/customers",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
