@@ -22,4 +22,6 @@ services:
         - "8080:8080"        
       volumes: 
         - ./jenkins_home:/var/jenkins_home
+        - ./jenkins_home/plugins:/usr/share/jenkins/ref/plugins
+        - ./jenkins_home/plugins.txt:/usr/share/jenkins/ref/plugins.txt
       
