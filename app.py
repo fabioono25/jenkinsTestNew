@@ -9,7 +9,7 @@ def get_customers():
     return jsonify(customers)
 
 def list_customers():
-    return [{ 'name': 'John', 'surname': 'Nash' }, 
+    return [{ 'name': 'John2', 'surname': 'Nash' }, 
             { 'name': 'Steve', 'surname': 'Wozniak' }]
 
 if __name__ == "__main__":
